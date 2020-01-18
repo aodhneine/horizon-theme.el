@@ -56,6 +56,7 @@
        (yellow "#FBC3A7"))
   (custom-theme-set-faces
    'horizon
+   `(border ((t :background ,lavender)))
    `(default ((t (:foreground ,light-text :background ,background))))
    `(cursor ((t (:background ,secondary-accent-alt :foreground ,background))))
    `(highlight ((t (:background ,accent-alt))))
@@ -86,6 +87,14 @@
    ;; mode-line
    `(mode-line ((t :background ,background-alt :foreground ,light-text)))
    `(mode-line-buffer-id ((t :foreground ,apricot)))
-   `(mode-line-inactive ((t :foreground ,background)))
+   `(mode-line-inactive ((t :foreground ,accent)))
+   ;; markdown
+   `(markdown-header-face-1 ((t :foreground ,secondary-accent-alt)))
+   `(markdown-header-delimiter-face ((t :foreground ,secondary-accent-alt)))
+   `(markdown-markup-face ((t :foreground ,lavender)))
+   `(markdown-link-face ((t :foreground ,secondary-accent-alt :underline t)))
+   `(markdown-url-face ((t :foreground ,turquoise)))
+   `(markdown-bold-face ((t :foreground ,lavender :bold t)))
+   `(markdown-italic-face ((t :foreground ,turquoise :italic t)))
    ))
 
