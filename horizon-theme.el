@@ -1,9 +1,9 @@
 ;;; horizon-theme.el ---  A beautifully warm dual theme for Emacs -*- lexical-binding: t; -*-
 
 ;; This file is not part of GNU Emacs.
-;; Copyright (C) 2019 Aodnait Étaín
+;; Copyright (C) 2019-2020 Aodnait Étaín
 ;; Authors: Aodnait Étaín <aodhneine@tuta.io>
-;; Version: 0.0.1
+;; Version: 0.0.3
 ;; URL: https://github.com/aodhneine/horizon-theme.el
 ;; Package-Requires: ((emacs "27"))
 
@@ -16,7 +16,7 @@
 ;; creating simple theme on which I based this implementation. <3
 
 ;;; License:
-;; This theme is licensed under MIT License.
+;; This project is licensed under MIT License.
 
 ;;; Code:
 
@@ -30,7 +30,7 @@
        (apricot "#F09483")
        (rosebud "#FAB795")
        (tacao "#FAC29A")
-       (grey "#828282")
+       (grey "#6a6a6a")
        ;; ui
        (shadow "#16161C")
        (border "#1A1C23")
@@ -57,17 +57,35 @@
   (custom-theme-set-faces
    'horizon
    `(default ((t (:foreground ,light-text :background ,background))))
-   `(cursor ((t (:background ,secondary-accent-alt))))
+   `(cursor ((t (:background ,secondary-accent-alt :foreground ,background))))
    `(highlight ((t (:background ,accent-alt))))
+   `(fringe ((t :foreground ,background-alt)))
    `(region ((t :background ,accent)))
+   `(shadow ((t :foreground ,shadow)))
+   `(minibuffer-prompt ((t :foreground ,turquoise)))
+   `(trailing-whitespace ((t :foreground ,turquoise :background ,turquoise)))     
+   `(match ((t :background ,accent :foreground ,background)))
    ;; font-lock faces
+   `(font-lock-builtin-face ((t :foreground ,lavender)))
    `(font-lock-comment-face ((t :foreground ,grey)))
    `(font-lock-constant-face ((t :foreground ,apricot)))
+   `(font-lock-doc-face ((t :foreground ,grey)))
    `(font-lock-function-name-face ((t :foreground ,turquoise)))
    `(font-lock-keyword-face ((t :foreground ,lavender)))
    `(font-lock-preprocessor-face ((t :foreground ,lavender)))
    `(font-lock-string-face ((t :foreground ,rosebud)))
-   `(font-lock-type-face ((t :foreground ,lavender)))
+   `(font-lock-type-face ((t :foreground ,apricot)))
    `(font-lock-variable-name-face ((t :foreground ,cranberry)))
+   `(font-lock-warning-face ((t :foreground ,warning)))
+   ;; diff
+   `(diff-removed ((t :foreground ,negative)))
+   `(diff-added ((t :foreground ,positive)))
+   ;; isearch
+   `(isearch ((t :foreground ,light-text :background ,accent)))
+   `(isearch-lazy-highlight-face ((t :background ,red)))
+   ;; mode-line
+   `(mode-line ((t :background ,background-alt :foreground ,light-text)))
+   `(mode-line-buffer-id ((t :foreground ,apricot)))
+   `(mode-line-inactive ((t :foreground ,background)))
    ))
 
