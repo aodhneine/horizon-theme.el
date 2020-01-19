@@ -81,18 +81,25 @@ influence of C1 on the result."
   (custom-theme-set-faces
    'horizon
    `(default ((t (:foreground ,foreground :background ,background))))
+   ;; miscellanous
+   `(region ((t :background ,(horizon-theme-blend-colours accent "#404040"))))
+   `(highlight ((t (:background ,(horizon-theme-blend-colours accent-alt "#404040")))))
    `(cursor ((t (:background ,secondary-accent-alt :foreground ,background))))
-   `(highlight ((t (:background ,accent-alt))))
    `(fringe ((t :foreground ,background-alt)))
-   `(region ((t :background ,accent)))
-   `(shadow ((t :foreground ,shadow)))
+   `(show-paren-match-face ((t :foreground ,foreground :background ,accent-alt)))
+   `(show-paren-match ((t (:foreground ,foreground :background ,(horizon-theme-blend-colours accent-alt background)))))
+   `(show-paren-mismatch ((t (:background ,warning))))
+   `(match ((t :foreground ,foreground :background ,(horizon-theme-blend-colours accent-alt "#4D4D4D"))))
+   `(lazy-highlight ((t :foreground ,foreground :background ,(horizon-theme-blend-colours accent-alt "#000000"))))
    `(minibuffer-prompt ((t :foreground ,turquoise)))
-   `(trailing-whitespace ((t :foreground ,turquoise :background ,turquoise)))
-   `(match ((t :foreground ,foreground :background ,apricot)))
-   `(lazy-highlight ((t :foreground ,light-text :background ,(horizon-theme-blend-colours turquoise background 0.35))))
+   `(shadow ((t :foreground ,shadow)))
+   `(success ((t :foreground ,turquoise)))
    `(warning ((t :foreground ,warning)))
    `(error ((t :foreground ,cranberry)))
-   `(success ((t :foreground ,turquoise)))
+   `(trailing-whitespace ((t :foreground ,turquoise :background ,turquoise)))
+   `(link ((t :foreground ,apricot :underline t)))
+   `(line-number ((t :foreground ,(horizon-theme-blend-colours light-text "#1A1A1A") :background ,background)))
+   `(line-number-current-line ((t :foreground ,(horizon-theme-blend-colours light-text "#808080") :background ,background)))
    ;; font-lock faces
    `(font-lock-builtin-face ((t :foreground ,lavender)))
    `(font-lock-comment-face ((t :foreground ,grey)))
@@ -100,9 +107,11 @@ influence of C1 on the result."
    `(font-lock-doc-face ((t :foreground ,grey)))
    `(font-lock-function-name-face ((t :foreground ,turquoise)))
    `(font-lock-keyword-face ((t :foreground ,lavender)))
+   `(font-lock-negation-char-face ((t :foreground ,lavender)))
    `(font-lock-preprocessor-face ((t :foreground ,lavender)))
+   `(font-lock-reference-face ((t: :foreground ,rosebud)))
    `(font-lock-string-face ((t :foreground ,rosebud)))
-   `(font-lock-type-face ((t :foreground ,apricot)))
+   `(font-lock-type-face ((t :foreground ,lavender)))
    `(font-lock-variable-name-face ((t :foreground ,cranberry)))
    `(font-lock-warning-face ((t :foreground ,warning)))
    ;; diff
@@ -113,8 +122,8 @@ influence of C1 on the result."
    `(isearch-lazy-highlight-face ((t :inherit lazy-highlight)))
    `(isearch-fail ((t :foreground ,background :background ,cranberry)))
    ;; mode-line
-   `(mode-line ((t :background ,background-alt :foreground ,foreground)))
-   `(mode-line-buffer-id ((t :foreground ,apricot)))
+   `(mode-line ((t :background ,background-alt :foreground ,(horizon-theme-blend-colours light-text "#808080"))))
+   `(mode-line-buffer-id ((t :bold t)))
    `(mode-line-inactive ((t :foreground ,(horizon-theme-blend-colours foreground accent))))
    ;; markdown
    `(markdown-header-face-1 ((t :foreground ,secondary-accent-alt)))
@@ -140,7 +149,7 @@ influence of C1 on the result."
    `(vterm-color-cyan ((t :foreground ,cyan)))
    `(vterm-color-white ((t :foreground ,"#FAC29A")))
    ;; evil
-   `(evil-ex-substitute-matches ((t :foreground ,red :underline t)))
+   `(evil-ex-substitute-matches ((t :foreground ,red :strike-through t)))
    `(evil-ex-substitute-replacement ((t :foreground ,green)))))
 
 
