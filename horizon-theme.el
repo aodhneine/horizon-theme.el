@@ -69,6 +69,7 @@ influence of C1 on the result."
        (modified "#21BFC2")
        (light-text "#D5D8DA")
        (dark-text "#06060C")
+       (foreground (blend-colours light-text background 0.85))
        ;; ansi
        (blue "#3FC4DE")
        (cyan "#6BE4E6")
@@ -78,8 +79,7 @@ influence of C1 on the result."
        (yellow "#FBC3A7"))
   (custom-theme-set-faces
    'horizon
-   `(border ((t :background ,lavender)))
-   `(default ((t (:foreground ,light-text :background ,background))))
+   `(default ((t (:foreground ,foreground :background ,background))))
    `(cursor ((t (:background ,secondary-accent-alt :foreground ,background))))
    `(highlight ((t (:background ,accent-alt))))
    `(fringe ((t :foreground ,background-alt)))
@@ -87,7 +87,11 @@ influence of C1 on the result."
    `(shadow ((t :foreground ,shadow)))
    `(minibuffer-prompt ((t :foreground ,turquoise)))
    `(trailing-whitespace ((t :foreground ,turquoise :background ,turquoise)))     
-   `(match ((t :background ,accent :foreground ,background)))
+   `(match ((t :foreground ,foreground :background ,apricot)))
+   `(lazy-highlight ((t :foreground ,light-text :background ,(blend-colours turquoise background 0.35))))
+   `(warning ((t :foreground ,warning)))
+   `(error ((t :foreground ,cranberry)))
+   `(success ((t :foreground ,turquoise)))
    ;; font-lock faces
    `(font-lock-builtin-face ((t :foreground ,lavender)))
    `(font-lock-comment-face ((t :foreground ,grey)))
