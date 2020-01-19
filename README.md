@@ -21,7 +21,7 @@ git clone https://github.com/aodhneine/horizon-theme.el
 and then add the following lines to your init file:
 
 ``` emacs-lisp
-(add-to-list 'load-path "path/to/horizon/theme/")
+(add-to-list 'custom-theme-load-path "path/to/horizon/theme/")
 (load-theme 'horizon t)
 ```
 
