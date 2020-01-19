@@ -23,6 +23,28 @@
 (deftheme horizon
   "A beautifully warm dual theme for Emacs")
 
+(defun join-colour (r g b)
+  "Build a color from R G B.
+Inverse of `color-values'."
+  (format "#%02x%02x%02x"
+          (ash r -8)
+          (ash g -8)
+          (ash b -8)))
+
+(defun blend-colours (c1 c2 &optional alpha)
+  "Blend the two colors C1 and C2 with ALPHA.
+C1 and C2 are in the format of `color-values'.
+ALPHA is a number between 0.0 and 1.0 which corresponds to the
+influence of C1 on the result."
+  (let ((alpha (or alpha 0.5))
+        (c1 (color-values c1))
+        (c2 (color-values c2)))
+    (apply #'join-colour
+           (cl-mapcar
+            (lambda (x y)
+              (round (+ (* x alpha) (* y (- 1 alpha)))))
+            c1 c2))))
+
 (let* (;; syntax
        (lavender "#B877DB")
        (cranberry "#E95678")
