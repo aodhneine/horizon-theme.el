@@ -5,13 +5,14 @@
 ;; Authors: Aodnait Étaín <aodhneine@tuta.io>
 ;; Version: 0.0.3
 ;; URL: https://github.com/aodhneine/horizon-theme.el
-;; Package-Requires: ((emacs "27"))
+;; Package-Requires: ((emacs "24.3"))
 
 ;;; Commentary:
-
-;;; Credits:
 ;; This theme is based on its namesake, Horizon theme for Visual Studio Code,
 ;; which can be find here: https://horizontheme.netlify.com/.
+
+;;; Credits:
+;; Thanks to author of the original theme, jolaleye at https://github.com/jolaleye.
 ;; Huge thanks to rexim, https://github.com/rexim/gruber-darker-theme for
 ;; creating simple theme on which I based this implementation. <3
 
@@ -23,7 +24,7 @@
 (deftheme horizon
   "A beautifully warm dual theme for Emacs")
 
-(defun join-colour (r g b)
+(defun horizon-theme-join-colour (r g b)
   "Build a color from R G B.
 Inverse of `color-values'."
   (format "#%02x%02x%02x"
@@ -31,7 +32,7 @@ Inverse of `color-values'."
           (ash g -8)
           (ash b -8)))
 
-(defun blend-colours (c1 c2 &optional alpha)
+(defun horizon-theme-blend-colours (c1 c2 &optional alpha)
   "Blend the two colors C1 and C2 with ALPHA.
 C1 and C2 are in the format of `color-values'.
 ALPHA is a number between 0.0 and 1.0 which corresponds to the
@@ -39,7 +40,7 @@ influence of C1 on the result."
   (let ((alpha (or alpha 0.5))
         (c1 (color-values c1))
         (c2 (color-values c2)))
-    (apply #'join-colour
+    (apply #'horizon-theme-join-colour
            (cl-mapcar
             (lambda (x y)
               (round (+ (* x alpha) (* y (- 1 alpha)))))
@@ -69,7 +70,7 @@ influence of C1 on the result."
        (modified "#21BFC2")
        (light-text "#D5D8DA")
        (dark-text "#06060C")
-       (foreground (blend-colours light-text background 0.85))
+       (foreground (horizon-theme-blend-colours light-text background 0.85))
        ;; ansi
        (blue "#3FC4DE")
        (cyan "#6BE4E6")
@@ -86,9 +87,9 @@ influence of C1 on the result."
    `(region ((t :background ,accent)))
    `(shadow ((t :foreground ,shadow)))
    `(minibuffer-prompt ((t :foreground ,turquoise)))
-   `(trailing-whitespace ((t :foreground ,turquoise :background ,turquoise)))     
+   `(trailing-whitespace ((t :foreground ,turquoise :background ,turquoise)))
    `(match ((t :foreground ,foreground :background ,apricot)))
-   `(lazy-highlight ((t :foreground ,light-text :background ,(blend-colours turquoise background 0.35))))
+   `(lazy-highlight ((t :foreground ,light-text :background ,(horizon-theme-blend-colours turquoise background 0.35))))
    `(warning ((t :foreground ,warning)))
    `(error ((t :foreground ,cranberry)))
    `(success ((t :foreground ,turquoise)))
@@ -114,7 +115,7 @@ influence of C1 on the result."
    ;; mode-line
    `(mode-line ((t :background ,background-alt :foreground ,foreground)))
    `(mode-line-buffer-id ((t :foreground ,apricot)))
-   `(mode-line-inactive ((t :foreground ,(blend-colours foreground accent))))
+   `(mode-line-inactive ((t :foreground ,(horizon-theme-blend-colours foreground accent))))
    ;; markdown
    `(markdown-header-face-1 ((t :foreground ,secondary-accent-alt)))
    `(markdown-header-face-2 ((t :foreground ,secondary-accent-alt)))
@@ -140,6 +141,9 @@ influence of C1 on the result."
    `(vterm-color-white ((t :foreground ,"#FAC29A")))
    ;; evil
    `(evil-ex-substitute-matches ((t :foreground ,red :underline t)))
-   `(evil-ex-substitute-replacement ((t :foreground ,green)))
-   ))
+   `(evil-ex-substitute-replacement ((t :foreground ,green)))))
 
+
+(provide 'horizon-theme)
+
+;;; horizon-theme.el ends here
