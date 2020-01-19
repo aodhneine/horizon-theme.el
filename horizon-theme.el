@@ -3,7 +3,7 @@
 ;; This file is not part of GNU Emacs.
 ;; Copyright (C) 2019-2020 Aodnait Étaín
 ;; Authors: Aodnait Étaín <aodhneine@tuta.io>
-;; Version: 0.0.3
+;; Version: 0.1.5
 ;; URL: https://github.com/aodhneine/horizon-theme.el
 ;; Package-Requires: ((emacs "24.3"))
 
