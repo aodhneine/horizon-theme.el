@@ -1,4 +1,4 @@
-;;; horizon-theme.el ---  A beautifully warm dual theme for Emacs -*- lexical-binding: t; -*-
+;;; horizon-theme.el ---  A beautifully warm dual theme -*- lexical-binding: t; -*-
 
 ;; This file is not part of GNU Emacs.
 ;; Copyright (C) 2019-2020 Aodnait Étaín
@@ -52,7 +52,7 @@ influence of C1 on the result."
        (turquoise "#25B0BC")
        (apricot "#F09483")
        (rosebud "#FAB795")
-       (tacao "#FAC29A")
+       ;; (tacao "#FAC29A")
        (grey "#6a6a6a")
        ;; ui
        (shadow "#16161C")
@@ -61,7 +61,7 @@ influence of C1 on the result."
        (background-alt "#232530")
        (accent "#2E303E")
        (accent-alt "#6C6F93")
-       (secondary-accent "#E9436D")
+       ;; (secondary-accent "#E9436D")
        (secondary-accent-alt "#E95378")
        (tertiary-accent "#FAB38E")
        (positive "#09F7A0")
@@ -93,6 +93,7 @@ influence of C1 on the result."
    `(lazy-highlight ((t :foreground ,foreground :background ,(horizon-theme-blend-colours accent-alt "#000000"))))
    `(minibuffer-prompt ((t :foreground ,turquoise)))
    `(shadow ((t :foreground ,shadow)))
+   `(vertical-border ((t :foreground ,border)))
    `(success ((t :foreground ,turquoise)))
    `(warning ((t :foreground ,warning)))
    `(error ((t :foreground ,cranberry)))
@@ -115,8 +116,14 @@ influence of C1 on the result."
    `(font-lock-variable-name-face ((t :foreground ,cranberry)))
    `(font-lock-warning-face ((t :foreground ,warning)))
    ;; diff
-   `(diff-removed ((t :foreground ,negative)))
    `(diff-added ((t :foreground ,positive)))
+   `(diff-removed ((t :foreground ,negative)))
+   `(diff-changed ((t :foreground ,modified)))
+   `(diff-refine-added ((t :background ,positive :foreground ,dark-text)))
+   `(diff-refine-removed ((t :background ,negative :foreground ,dark-text)))
+   `(diff-refine-changed ((t :background ,modified :foreground ,dark-text)))
+   `(diff-header ((t :foreground ,lavender)))
+   `(diff-file-header ((t :background ,lavender :foreground ,dark-text)))
    ;; isearch
    `(isearch ((t :foreground ,foreground :background ,accent)))
    `(isearch-lazy-highlight-face ((t :inherit lazy-highlight)))
