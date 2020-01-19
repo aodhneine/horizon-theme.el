@@ -108,12 +108,13 @@ influence of C1 on the result."
    `(diff-removed ((t :foreground ,negative)))
    `(diff-added ((t :foreground ,positive)))
    ;; isearch
-   `(isearch ((t :foreground ,light-text :background ,accent)))
-   `(isearch-lazy-highlight-face ((t :background ,red)))
+   `(isearch ((t :foreground ,foreground :background ,accent)))
+   `(isearch-lazy-highlight-face ((t :inherit lazy-highlight)))
+   `(isearch-fail ((t :foreground ,background :background ,cranberry)))
    ;; mode-line
-   `(mode-line ((t :background ,background-alt :foreground ,light-text)))
+   `(mode-line ((t :background ,background-alt :foreground ,foreground)))
    `(mode-line-buffer-id ((t :foreground ,apricot)))
-   `(mode-line-inactive ((t :foreground ,accent)))
+   `(mode-line-inactive ((t :foreground ,(blend-colours foreground accent))))
    ;; markdown
    `(markdown-header-face-1 ((t :foreground ,secondary-accent-alt)))
    `(markdown-header-delimiter-face ((t :foreground ,secondary-accent-alt)))
