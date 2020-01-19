@@ -1,5 +1,5 @@
 # Horizon
-![emacs-vs-vscode](./screenshots/screenshot.png)
+![such-an-awesome-theme](./screenshots/screenshot-2.png)
 
 A [Horizon](https://horizontheme.netlify.com) theme by [jolaleye](https://github.com/jolaleye), ported from Visual Studio Code to Emacs by aodhneine.
 
