@@ -128,5 +128,18 @@ influence of C1 on the result."
    `(markdown-url-face ((t :foreground ,tertiary-accent :underline t)))
    `(markdown-bold-face ((t :foreground ,lavender :bold t)))
    `(markdown-italic-face ((t :foreground ,turquoise :italic t)))
+   ;; vterm
+   `(vterm-color-default ((t :foreground ,foreground)))
+   `(vterm-color-black ((t :foreground "#16161C")))
+   `(vterm-color-red ((t :foreground ,red)))
+   `(vterm-color-green ((t :foreground ,green)))
+   `(vterm-color-yellow ((t :foreground ,yellow)))
+   `(vterm-color-blue ((t :foreground ,blue)))
+   `(vterm-color-magenta ((t :foreground ,magenta)))
+   `(vterm-color-cyan ((t :foreground ,cyan)))
+   `(vterm-color-white ((t :foreground ,"#FAC29A")))
+   ;; evil
+   `(evil-ex-substitute-matches ((t :foreground ,red :underline t)))
+   `(evil-ex-substitute-replacement ((t :foreground ,green)))
    ))
 
