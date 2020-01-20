@@ -4,24 +4,13 @@
 A [Horizon](https://horizontheme.netlify.com) theme by [jolaleye](https://github.com/jolaleye), ported from Visual Studio Code to Emacs by aodhneine.
 
 # Installation
-This package is (soon) available on [MELPA](https://melpa.org/). To install it, just put this in your init file:
-
-``` emacs-lisp
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-```
-and then use `M-x package-install RET horizon-theme RET`. Also use `M-x customize-themes` to change your current theme.
-
-If you don't want to use MELPA, you can also install this theme manually. Just download the theme (for example through `git clone`):
-
+This package is **not** yet available on MELPA, for the time being you can install this theme manually. Just clone this repository:
 ``` shell
-git clone https://github.com/aodhneine/horizon-theme.el
+git clone https://github.com/aodhneine/horizon-theme.el.git
 ```
 and then add the following lines to your init file:
-
 ``` emacs-lisp
-(add-to-list 'custom-theme-load-path "path/to/horizon/theme/")
+(add-to-list 'custom-theme-load-path "path/to/horizon/theme/repository/")
 (load-theme 'horizon t)
 ```
 
