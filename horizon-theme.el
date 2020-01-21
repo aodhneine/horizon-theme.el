@@ -91,7 +91,7 @@ influence of C1 on the result."
    `(show-paren-mismatch ((t (:background ,warning))))
    `(match ((t :foreground ,foreground :background ,(horizon-theme-blend-colours accent-alt "#4D4D4D"))))
    `(lazy-highlight ((t :foreground ,foreground :background ,(horizon-theme-blend-colours accent-alt "#000000"))))
-   `(minibuffer-prompt ((t :foreground ,turquoise)))
+   `(minibuffer-prompt ((t :foreground ,lavender)))
    `(shadow ((t :foreground ,shadow)))
    `(vertical-border ((t :foreground ,border)))
    `(success ((t :foreground ,turquoise)))
@@ -130,8 +130,8 @@ influence of C1 on the result."
    `(isearch-fail ((t :foreground ,background :background ,cranberry)))
    ;; mode-line
    `(mode-line ((t :background ,background-alt :foreground ,(horizon-theme-blend-colours light-text "#808080"))))
-   `(mode-line-buffer-id ((t :bold t)))
-   `(mode-line-inactive ((t :foreground ,(horizon-theme-blend-colours foreground accent))))
+   `(mode-line-buffer-id ((t :foreground ,foreground :bold t)))
+   `(mode-line-inactive ((t :foreground ,(horizon-theme-blend-colours foreground accent) :background ,background)))
    ;; markdown
    `(markdown-header-face-1 ((t :foreground ,secondary-accent-alt)))
    `(markdown-header-face-2 ((t :foreground ,secondary-accent-alt)))
@@ -155,6 +155,12 @@ influence of C1 on the result."
    `(vterm-color-magenta ((t :foreground ,magenta)))
    `(vterm-color-cyan ((t :foreground ,cyan)))
    `(vterm-color-white ((t :foreground ,"#FAC29A")))
+   ;; magit
+   `(magit-section-heading ((t :foreground ,lavender)))
+   `(magit-section-highlight ((t :inherit region)))
+   `(magit-item-highlight ((t :inherit region)))
+   `(magit-log-author ((t :foreground ,lavender)))
+   `(magit-hash ((t :foreground ,tertiary-accent)))
    ;; evil
    `(evil-ex-substitute-matches ((t :foreground ,red :strike-through t)))
    `(evil-ex-substitute-replacement ((t :foreground ,green)))))
