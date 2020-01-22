@@ -70,7 +70,7 @@ influence of C1 on the result."
        (modified "#21BFC2")
        (light-text "#D5D8DA")
        (dark-text "#06060C")
-       (foreground (horizon-theme-blend-colours light-text background 0.85))
+       (foreground (horizon-theme-blend-colours light-text "#808080"))
        ;; ansi
        (blue "#3FC4DE")
        (cyan "#6BE4E6")
@@ -82,8 +82,8 @@ influence of C1 on the result."
    'horizon
    `(default ((t (:foreground ,foreground :background ,background))))
    ;; miscellanous
-   `(region ((t :background ,(horizon-theme-blend-colours accent "#404040"))))
-   `(highlight ((t (:background ,(horizon-theme-blend-colours accent-alt "#404040")))))
+   `(region ((t :background ,(horizon-theme-blend-colours accent "#1A1A1A"))))
+   `(highlight ((t (:background ,(horizon-theme-blend-colours accent-alt "#1A1A1A")))))
    `(cursor ((t (:background ,secondary-accent-alt :foreground ,background))))
    `(fringe ((t :foreground ,background-alt)))
    `(show-paren-match-face ((t :foreground ,foreground :background ,accent-alt)))
@@ -145,6 +145,13 @@ influence of C1 on the result."
    `(markdown-url-face ((t :foreground ,tertiary-accent :underline t)))
    `(markdown-bold-face ((t :foreground ,lavender :bold t)))
    `(markdown-italic-face ((t :foreground ,turquoise :italic t)))
+   ;; company
+   `(company-tooltip ((t :inherit region)))
+   `(company-tooltip-selection ((t :background ,accent :foreground)))
+   `(company-tooltip-common ((t :foreground ,red :bold t)))
+   `(company-tooltip-annotation ((t :foreground ,(horizon-theme-blend-colours light-text "#404040"))))
+   `(company-scrollbar-bg ((t :inherit region)))
+   `(company-scrollbar-fg ((t :background ,accent)))
    ;; vterm
    `(vterm-color-default ((t :foreground ,foreground)))
    `(vterm-color-black ((t :foreground "#16161C")))
