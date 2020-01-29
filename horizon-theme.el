@@ -112,7 +112,7 @@ influence of C1 on the result."
    `(font-lock-preprocessor-face ((t :foreground ,lavender)))
    `(font-lock-reference-face ((t: :foreground ,rosebud)))
    `(font-lock-string-face ((t :foreground ,rosebud)))
-   `(font-lock-type-face ((t :foreground ,lavender)))
+   `(font-lock-type-face ((t :foreground ,apricot)))
    `(font-lock-variable-name-face ((t :foreground ,cranberry)))
    `(font-lock-warning-face ((t :foreground ,warning)))
    ;; diff
