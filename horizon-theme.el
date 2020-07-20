@@ -194,6 +194,12 @@ influence of C1 on the result."
    `(evil-ex-substitute-matches ((t :foreground ,red :strike-through t)))
    `(evil-ex-substitute-replacement ((t :foreground ,green)))))
 
+;;;###autoload
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
+
+(provide-theme 'horizon)
 
 (provide 'horizon-theme)
 
